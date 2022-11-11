@@ -3,7 +3,8 @@
 using namespace std;
 
 int main(){
-    char buff[1000], sentence[50][20];
+    // if not initialize char list, unexpected bug will occur, diff compiler will output diff
+    char buff[1000], sentence[50][20]={{0}};
     cin.getline(buff,1000);
     int i=0, n=0, k=0;
     while(buff[i] != '\0'){
@@ -22,7 +23,7 @@ int main(){
     // buff, n, i won't change after here
     for(int j=0; j<n; j++){
         int l=0;
-        char punk[10];
+        char punk[10]={0};
         for(int k=strlen(sentence[j]); k>0; k--){
             if(sentence[j][k-1] >= 'A' && sentence[j][k-1] <= 'z'){
                 cout << sentence[j][k-1];
