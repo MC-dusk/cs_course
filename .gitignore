@@ -1,5 +1,16 @@
-221108/a
-221108/b.exe
+# Ignore all
+*
+
+# # Unignore all with extensions
+# !*.*
+
+# Unignore all dirs
+!*/
+
 .vscode/
-221108/c.exe
-221108/a.exe
+
+!*.cpp
+!*.c
+!*.py
+!*.txt
+!*.md
