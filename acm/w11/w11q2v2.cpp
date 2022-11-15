@@ -1,10 +1,10 @@
 #include <iostream>
-using namespace std;
+// using namespace std;
 
 int main(){
 	char a[300]={0},b[30]={0};
 	int n,c,d=0,e,i,j=0;
-	cin.get(a,300);
+	std::cin.get(a,300);
 	for(i=0;i<300;i++){
 		if((a[i]>='A'&&a[i]<='Z')||(a[i]>='a'&&a[i]<='z')){
 			b[j]=a[i];
@@ -19,5 +19,5 @@ int main(){
 			printf("%c",a[i]);
 		}
 	}
-	 return 0;
+	return 0;
 }
