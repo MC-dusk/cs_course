@@ -4,7 +4,7 @@ using namespace std;
 
 int main(){
     // if not initialize char list, unexpected bug will occur, diff compiler will output diff
-    char buff[1000], sentence[50][20]={{0}};
+    char buff[1000], sentence[50][20]={0};
     cin.getline(buff,1000);
     int i=0, n=0, k=0;
     while(buff[i] != '\0'){
