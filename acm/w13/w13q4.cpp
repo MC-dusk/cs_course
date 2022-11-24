@@ -27,7 +27,7 @@ int main(){
 }
 
 void printStar(int x){
-    char star[x/2+1][x];
+    char star[x/2+1][x+1]={0};
     for (int i = 0; i < x/2+1; i++)
     {
         for (int j = 0; j < x; j++)
