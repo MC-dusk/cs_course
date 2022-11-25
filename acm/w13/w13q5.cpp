@@ -5,15 +5,7 @@ int main(){
     int M, n=0;
     cin >> M;
     char sentence[50][20]={0};
-    // while (scanf("%s", sentence[n]) != EOF)
-    // while (cin >> sentence[n])
-    while (scanf("%s", sentence[n++]) && getchar()==' ')
-    {
-        // n++;
-        // cin >> sentence[n++];
-        // in = sentence[n-1][0];
-    }
-    // cin.get(input);
+    while (scanf("%s", sentence[n++]) && getchar()==' '){}
     if (M > n)
     {
         cout << "error" << endl;
