@@ -11,7 +11,7 @@ int main(){
     {
         temp = result;
         result = hw(result);
-        if (result<0)
+        if (result<0) // overflow, more than 2^31
         {
             cout << "No" << endl;
             return 0;
@@ -22,14 +22,13 @@ int main(){
 }
 
 int hw(int x){
-    int q=x, num[10], i=0;
+    int q=x, num[10], i=0, y=0;
     while (q > 0)
     {
         num[i++] = q % 10;
         q /= 10;
     }
-    int y=num[0];
-    for (int j=1; j<i; j++)
+    for (int j=0; j<i; j++)
     {
         y *= 10;
         y += num[j];
