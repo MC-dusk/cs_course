@@ -9,6 +9,7 @@
 
 .vscode/
 .draft/
+build/
 
 !*.cpp
 !*.c
