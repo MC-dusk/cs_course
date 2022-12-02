@@ -12,8 +12,9 @@ int main(){
     }
 
     // output
-    m = n;
-    for(int i=0; i<m; i++){
+    // if "i<n" in for(), n will become 0 after once, ?
+    // m = n;
+    for(int i=0; i<n; i++){
         int j=0, a, b, c, q[1000]={0}, r, res[1000]={0};
         a = list[i][0];
         b = list[i][1];
@@ -21,24 +22,24 @@ int main(){
         while( 1 ){
             q[j++] = a / b;
             r = a % b;
-            if( (a=r) == 0){
-                q[j] = 0;
-                res[r] = j++;
+            if( r == 0 ){
+                res[r] = j;
+                q[j++] = 0;
                 break;
             }
-            // while( a<b ){
-                a *= 10;
-            // }
+            a = r;
+            a *= 10;
             if( res[r] != 0 ){
                 break;
             }
             res[r] = j;
         }
-        char buff[1], loop[1000]={0}, output[c+1]={0}, input[1000]={0};
 
-        // print
+        // print int and dot
+        // if char buff[1], linux g++ will go wrong, ?
+        char buff[2], loop[1000]={0}, output[c+1]={0}, input[1000]={0};
         cout << q[0] << '.';
-        // print q[1] ~ q[ res[r]-2 ]
+        // print noloop frac: q[1] ~ q[res[r]-2]
         for(int k=1; k<res[r]; k++){
             sprintf(buff, "%d", q[k]);
             strcat(output,buff);
@@ -47,10 +48,11 @@ int main(){
             }
         }
         cout << output;
+        // end print for length limit
         if(strlen(output)>=c){
             continue;
         }
-        // print loop
+        // print loop frac
         for(int k=res[r]; k<j; k++){
             sprintf(buff, "%d", q[k]);
             strcat(loop,buff);
@@ -63,8 +65,8 @@ int main(){
         output[strlen(output)] = '\0';
         cout << output << endl;
 
-        // cout << output << endl;
-        // printf("%.*Lf\n", c, t);
+        // if c < 20, just code below is fine
+        // printf("%.*Lf\n", c, (long double)a/b);
     }
     return 0;
 }
