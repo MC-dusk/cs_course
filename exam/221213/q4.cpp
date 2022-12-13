@@ -1,32 +1,23 @@
 #include <iostream>
-#include <cstring>
 #include <string>
-#include <stdlib.h>
 using namespace std;
 
 int main(){
     string month[12]={"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
     int month_days[12]={31,28,31,30,31,30,31,31,30,31,30,31};
-    char str[9];
+    string str;
     cin >> str;
     int date[3];
     for (size_t i = 0; i < 3; i++)
     {
-        char buff[3];
-        strncpy(buff, str+3*i, 2);
-        date[i] = atoi(buff);
+        date[i] = stoi(str.substr(3*i, 2));
     }
     if (date[0]>12 || date[0]<1)
     {
         cout << month[date[1]-1] << ' ' << date[2] << ", 20" << date[0] << endl;
         return 0;
     }
-    if (date[1]>12 || date[1]<1)
-    {
-        cout << month[date[0]-1] << ' ' << date[1] << ", 20" << date[2] << endl;
-        return 0;
-    }
-    if (date[2]>month_days[date[1]-1])
+    if (date[1]>12 || date[1]<1 || date[2]>month_days[date[1]-1])
     {
         cout << month[date[0]-1] << ' ' << date[1] << ", 20" << date[2] << endl;
         return 0;

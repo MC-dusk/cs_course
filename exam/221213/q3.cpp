@@ -4,7 +4,7 @@ using namespace std;
 int main(){
     int n, k;
     cin >> n >> k;
-    long long int mt[k][n][n]={0};
+    unsigned long long int mt[k][n][n]={0};
     for (size_t i = 0; i < n; i++)
     {
         for (size_t j = 0; j < n; j++)
@@ -30,14 +30,7 @@ int main(){
         for (size_t j = 0; j < n; j++)
         {
             cout << mt[k-1][i][j];
-            if (j < (n-1))
-            {
-                cout << ' ';
-            }
-            else
-            {
-                cout << '\n';
-            }
+            (i < (n-1)) ? (cout << ' ') : (cout << '\n');
         }
     }
     return 0;

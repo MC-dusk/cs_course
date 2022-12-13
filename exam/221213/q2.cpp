@@ -7,19 +7,13 @@ int main(){
     int x, diffnum[n]={0}, p=0;
     for (int i = 0; i < n; i++)
     {
-        int diff=0;
         cin >> x;
-        for (int j = 0; j < p; j++)
+        int j;
+        for (j = 0; j < p; j++)
         {
-            if (x != diffnum[j])
-            {
-                diff++;
-            }
+            if (x == diffnum[j]) break;
         }
-        if (diff == p)
-        {
-            diffnum[p++] = x;
-        }
+        (j == p) && (diffnum[p++] = x); // if j!=p, it will just continue and not operate the diffnum
     }
     cout << p << endl;
     return 0;
